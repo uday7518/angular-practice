@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class Home {
   msg = '';
-
   constructor(private dataService: Data) {
     this.msg = this.dataService.getMessage();
   }
