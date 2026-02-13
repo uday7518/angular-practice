@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLinkActive, RouterOutlet ,RouterLink} from '@angular/router';
 import { TestPipe } from './test-pipe';
 import { Header } from './header/header';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -15,4 +16,13 @@ import { Header } from './header/header';
 })
 export class App {
   protected readonly title = signal('DemoApp');
+  constructor(private http: HttpClient) {
+  }
+  data:any=null;
+  getdata(){
+    this.http.get('https://fakestoreapi.com/products?limit=5')
+    .subscribe((data)=>{
+      this.data=data
+    })
+  }
 }
