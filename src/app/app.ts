@@ -13,7 +13,7 @@ import { TodoList } from './todo-list/todo-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,FormsModule,ReactiveFormsModule,TestPipe,Header,RouterLinkActive,RouterLink],
+  imports: [RouterOutlet,CommonModule,FormsModule,ReactiveFormsModule,TestPipe,Header,RouterLinkActive,RouterLink,TodoForm,TodoList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

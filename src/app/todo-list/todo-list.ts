@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { Todo } from '../todo';
+import { Todo } from '../todo.model';
 import { FormsModule } from '@angular/forms';
+import { TodoItem } from '../todo.model';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-todo-list',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css',
 })

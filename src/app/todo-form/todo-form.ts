@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Todo } from '../todo';
+import { Todo as TodoService } from '../todo.model';
 import { FormsModule } from '@angular/forms';
   
 @Component({
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class TodoForm {
     newTask = '';
 
-  constructor(private todoService: Todo) {}
+  constructor(private todoService: TodoService) {}
 
   add() {
     this.todoService.addTodo(this.newTask);
