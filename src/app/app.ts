@@ -5,6 +5,9 @@ import { RouterLinkActive, RouterOutlet ,RouterLink} from '@angular/router';
 import { TestPipe } from './test-pipe';
 import { Header } from './header/header';
 import { HttpClient } from '@angular/common/http';
+import { TodoForm } from './todo-form/todo-form';
+import { TodoList } from './todo-list/todo-list';
+
 
 
 

@@ -1,5 +1,6 @@
-<app-header></app-header>
-<H1>HTTTP DEMO</H1>
+<div class="container">
+    <app-header></app-header>
+<H1 class="text-center">HTTTP DEMO</H1>
 <button (click)="getdata()">GET DATA</button>
 <div *ngIf="data">
     <table border="1">
@@ -14,3 +15,7 @@
     </table>
 </div>
 <router-outlet></router-outlet>
+<app-todo-form></app-todo-form>
+<app-todo-list></app-todo-list>
+
+</div>
