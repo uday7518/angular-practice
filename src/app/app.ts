@@ -7,13 +7,15 @@ import { Header } from './header/header';
 import { HttpClient } from '@angular/common/http';
 import { TodoForm } from './todo-form/todo-form';
 import { TodoList } from './todo-list/todo-list';
+import { Child } from './child/child';
+
 
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,FormsModule,ReactiveFormsModule,TestPipe,Header,RouterLinkActive,RouterLink,TodoForm,TodoList],
+  imports: [RouterOutlet,CommonModule,FormsModule,ReactiveFormsModule,TestPipe,Header,RouterLinkActive,RouterLink,TodoForm,TodoList,Child],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -28,4 +30,7 @@ export class App {
       this.data=data
     })
   }
+  name="uday";
+  id=1;
+
 }
