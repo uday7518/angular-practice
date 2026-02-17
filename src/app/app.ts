@@ -32,5 +32,15 @@ export class App {
   }
   name="uday";
   id=1;
+  user = {
+    name: '',
+    email: ''
+  };
+
+  onSubmit(form: any) {
+    console.log('Form Submitted!');
+    console.log(this.user);
+    console.log(form);
+  }
 
 }

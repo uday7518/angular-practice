@@ -1,3 +1,57 @@
+   <div class="container">
+    <h2>Template Driven Form Example</h2>
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+    <!-- Name -->
+    <div>
+        <label>Name:</label>
+        <input 
+        type="text"
+        name="name"
+        [(ngModel)]="user.name"
+        required
+        #n="ngModel"
+        />
+
+        <div *ngIf="n.invalid && n.touched" style="color:red;">
+        Name is required
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Email -->
+    <div>
+        <label>Email:</label>
+        <input 
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        required
+        email
+        #e="ngModel"
+        />
+
+        <div *ngIf="e.invalid && e.touched" style="color:red;">
+        Enter valid email
+        </div>
+    </div>
+
+    <br>
+
+    <button type="submit" [disabled]="myForm.invalid">
+        Submit
+    </button>
+
+    </form>
+
+    <hr>
+
+    <h3>Live Preview:</h3>
+    <p>Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+</div> 
 <div class="container">
     <app-header></app-header>
 <H1 class="text-center">HTTTP DEMO</H1>
