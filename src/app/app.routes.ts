@@ -7,6 +7,7 @@ import { Contact } from './contact/contact';
 import { About } from './about/about';
 import { Home1 } from './home1/home1';
 import { Home2 } from './home2/home2';
+import { Signup } from './signup/signup';
 
 export const routes: Routes = [
 {path: 'home',component:Home,
@@ -19,5 +20,7 @@ export const routes: Routes = [
 // { path: 'about', component: About },
 { path: 'about/:id', component: About },
 { path: 'contact', component: Contact },
-{ path: '**', component: Notfound }
+{ path: 'signup', component: Signup },
+{ path: '**', component: Notfound },
+
 ];

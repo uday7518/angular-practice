@@ -1,0 +1,130 @@
+<div class="container mt-5">
+        <h2>Sign up Form Example</h2>
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4">Signup</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="fullName"
+          [class.is-invalid]="submitted && f['fullName'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['fullName'].errors">
+          <div *ngIf="f['fullName'].errors?.['required']">
+            Full name is required
+          </div>
+          <div *ngIf="f['fullName'].errors?.['minlength']">
+            Minimum 3 characters required
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          [class.is-invalid]="submitted && f['email'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['email'].errors">
+          <div *ngIf="f['email'].errors?.['required']">
+            Email is required
+          </div>
+          <div *ngIf="f['email'].errors?.['email']">
+            Enter a valid email
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="phone"
+          [class.is-invalid]="submitted && f['phone'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['phone'].errors">
+          <div *ngIf="f['phone'].errors?.['required']">
+            Phone is required
+          </div>
+          <div *ngIf="f['phone'].errors?.['pattern']">
+            Enter a valid 10 digit phone number
+          </div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          [class.is-invalid]="submitted && f['password'].invalid"
+        />
+        <div class="invalid-feedback" *ngIf="submitted && f['password'].errors">
+          <div *ngIf="f['password'].errors?.['required']">
+            Password is required
+          </div>
+          <div *ngIf="f['password'].errors?.['minlength']">
+            Minimum 6 characters required
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="confirmPassword"
+          [class.is-invalid]="submitted && 
+            (f['confirmPassword'].invalid || form.errors?.['passwordMismatch'])"
+        />
+        <div class="invalid-feedback" *ngIf="submitted">
+          <div *ngIf="f['confirmPassword'].errors?.['required']">
+            Confirm password is required
+          </div>
+          <div *ngIf="form.errors?.['passwordMismatch']">
+            Passwords do not match
+          </div>
+        </div>
+      </div>
+
+      <!-- Agree Checkbox -->
+      <div class="form-check mb-3">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          formControlName="agree"
+          [class.is-invalid]="submitted && f['agree'].invalid"
+        />
+        <label class="form-check-label">
+          I agree to terms & conditions
+        </label>
+        <div class="text-danger small mt-1"
+          *ngIf="submitted && f['agree'].errors">
+          You must accept terms
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="d-grid">
+        <button class="btn btn-primary" type="submit">
+          Register
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
